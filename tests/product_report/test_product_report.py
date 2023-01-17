@@ -12,8 +12,9 @@ def test_relatorio_produto():
         instrucoes_de_armazenamento="ao abrigo de luz",
     )
 
-    assert (isinstance(str(product), str)) is True
-    assert (str(product)) == (
+    convert_to_string = str(product)
+    assert (isinstance(convert_to_string, str)) is True
+    assert (convert_to_string) == (
         "O produto farinha fabricado em 01-05-2021 por Farinini "
         "com validade até 02-06-2023 precisa ser armazenado "
         "ao abrigo de luz."
