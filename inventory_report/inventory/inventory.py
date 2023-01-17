@@ -10,8 +10,8 @@ class Inventory:
             with open(path, encoding="utf-8") as file:
                 data = csv.DictReader(file, delimiter=",", quotechar='"')
                 if type == 'simples':
-                    return SimpleReport.generate(data)
+                    return SimpleReport.generate(list(data))
                 elif type == 'completo':
-                    return CompleteReport.generate(data)
+                    return CompleteReport.generate(list(data))
         except OSError:
             raise ValueError('Type invalid')
