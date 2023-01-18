@@ -1,5 +1,6 @@
 from inventory_report.inventory.product import Product
 
+
 def create_product():
     return {
         "id": 1,
@@ -21,22 +22,22 @@ def test_relatorio_produto():
     #     "Armazenar ao abrigo de luz",
     # ]
 
-    mock_product = create_product()
+    mock = create_product()
 
     product = Product(
-        mock_product['id'],
-        mock_product['nome_do_produto'],
-        mock_product['nome_da_empresa'],
-        mock_product['data_de_fabricacao'],
-        mock_product['data_de_validade'],
-        mock_product['numero_de_serie'],
-        mock_product['instrucoes_de_armazenamento'],
+        mock['id'],
+        mock['nome_do_produto'],
+        mock['nome_da_empresa'],
+        mock['data_de_fabricacao'],
+        mock['data_de_validade'],
+        mock['numero_de_serie'],
+        mock['instrucoes_de_armazenamento'],
     )
 
     assert product.__repr__() == (
-        f"O produto {mock_product['nome_do_produto']}"
-        f" fabricado em {mock_product['data_de_fabricacao']}"
-        f" por {mock_product['nome_da_empresa']} com validade"
-        f" até {mock_product['data_de_validade']}"
-        f" precisa ser armazenado {mock_product['instrucoes_de_armazenamento']}."
+        f"O produto {mock['nome_do_produto']}"
+        f" fabricado em {mock['data_de_fabricacao']}"
+        f" por {mock['nome_da_empresa']} com validade"
+        f" até {mock['data_de_validade']}"
+        f" precisa ser armazenado {mock['instrucoes_de_armazenamento']}."
     )
